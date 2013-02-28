@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+
+<server class="org.jpos.q2.iso.QServer" logger="JSON" name="JSON-server">
+	<in>JSONsend</in>
+	<out>JSONreceive</out>
+	<space>tspace:MessagingSpace</space>
+	<ignore-iso-exceptions>yes</ignore-iso-exceptions>
+	<attr name="port" type="java.lang.Integer">9184</attr>
+	<channel class="com.edo.jpos.ext.JSONChannel" logger="JSON"
+		realm="JSON-channel">
+
+		<property name="timeout" value="3000000" />
+		<property name="override-header" value="true" />
+		<filter class="com.edo.jpos.ISOMsgJSONFilter" direction="incoming">
+			<property name="fieldNumber" value="0" />
+			<property name="JSONName" value="transaction_type" />
+			<property name="fieldNumber" value="3" />
+			<property name="JSONName" value="transaction_code" />
+			<property name="fieldNumber" value="4" />
+			<property name="JSONName" value="transaction_amount" />
+			<property name="fieldNumber" value="7" />
+			<property name="JSONName" value="222" />
+			<property name="fieldNumber" value="11" />
+			<property name="JSONName" value="system_trace_audit_number" />
+			<property name="fieldNumber" value="12" />
+			<property name="JSONName" value="localTransactionTime" />
+			<property name="fieldNumber" value="13" />
+			<property name="JSONName" value="localTransactionDate" />
+			<property name="fieldNumber" value="15" />
+			<property name="JSONName" value="settlementDate" />
+			<property name="fieldNumber" value="18" />
+			<property name="JSONName" value="merchant_category_code" />
+			<property name="fieldNumber" value="19" />
+			<property name="JSONName" value="merchant_country_code" />
+			<property name="fieldNumber" value="32" />
+			<property name="JSONName" value="merchant_id" />
+			<property name="fieldNumber" value="37" />
+			<property name="JSONName" value="retrieval_reference_number" />
+			<property name="fieldNumber" value="38" />
+			<property name="JSONName" value="auth_id" />
+			<property name="fieldNumber" value="39" />
+			<property name="JSONName" value="responseCode" />
+			<property name="fieldNumber" value="41" />
+			<property name="JSONName" value="device_id" />
+			<property name="fieldNumber" value="42" />
+			<property name="JSONName" value="cardAcceptorId" />
+			<property name="fieldNumber" value="43" />
+			<property name="JSONName" value="merchant_location" />
+			<property name="fieldNumber" value="49" />
+			<property name="JSONName" value="transaction_currency_code" />
+			<property name="fieldNumber" value="54" />
+			<property name="JSONName" value="transaction_cashback_amount" />
+			<property name="fieldNumber" value="59" />
+			<property name="JSONName" value="merchant_zip_code" />
+			<property name="fieldNumber" value="60" />
+			<property name="JSONName" value="terminal" />
+			<property name="fieldNumber" value="120" />
+			<property name="JSONName" value="card_token" />
+			<property name="fieldNumber" value="123" />
+			<property name="JSONName" value="merchant_name" />
+			<property name="fieldNumber" value="1001" />
+			<property name="JSONName" value="transaction_ref" />
+			<property name="fieldNumber" value="1002" />
+			<property name="JSONName" value="financial_institution_id" />
+			<property name="fieldNumber" value="1005" />
+			<property name="JSONName" value="JSON_transaction_id" />
+			<property name="fieldNumber" value="5000" />
+			<property name="JSONName" value="origin" />
+		</filter>
+		<filter class="com.edo.jpos.ISOMsgAdapterFilter" direction="incoming">
+			<property name="adapter-class" value="com.edo.jpos.ext.ISOMsgJSON" />
+			<property name="merchantLocation" value="43" />
+			<property name="customerToken" value="120" />
+			<property name="merchantName" value="123" />
+			<property name="merchantId" value="32" />
+		</filter>
+	</channel>
+	<request-listener class="com.edo.jpos.ISORequestListenerImplForJSON">
+		<property name="queueKey" value="ISOQueue" />
+		<property name="destinationSpace" value="tspace:ISOSpace" />
+		<property name="txnArrayKey" value="data" />
+	</request-listener>
+</server>
