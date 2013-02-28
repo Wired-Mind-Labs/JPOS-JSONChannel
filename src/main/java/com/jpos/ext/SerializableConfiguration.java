@@ -1,4 +1,4 @@
-package com.edo.jpos.ext;
+package com.jpos.ext;
 
 import java.io.Externalizable;
 import java.io.IOException;

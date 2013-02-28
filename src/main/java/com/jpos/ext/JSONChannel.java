@@ -1,4 +1,4 @@
-package com.edo.jpos.ext;
+package com.jpos.ext;
 
 import java.io.BufferedReader;
 import java.io.EOFException;

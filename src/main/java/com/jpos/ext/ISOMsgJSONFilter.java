@@ -1,4 +1,4 @@
-package com.edo.jpos.ext;
+package com.jpos.ext;
 
 import org.jpos.core.Configurable;
 import org.jpos.core.Configuration;
@@ -8,7 +8,7 @@ import org.jpos.iso.ISOMsg;
 import org.jpos.iso.RawIncomingFilter;
 import org.jpos.util.LogEvent;
 
-import com.edo.jpos.ext.ISOMsgJSON;
+import com.jpos.ext.ISOMsgJSON;
 
 public class ISOMsgJSONFilter implements RawIncomingFilter, Configurable {
 	

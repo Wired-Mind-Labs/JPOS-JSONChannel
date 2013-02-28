@@ -1,4 +1,4 @@
-package com.edo.jpos.ext;
+package com.jpos.ext;
 
 import java.util.StringTokenizer;
 
@@ -10,7 +10,7 @@ import org.jpos.iso.ISOSource;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import com.edo.jpos.ext.ISOMsgJSON;
+import com.jpos.ext.ISOMsgJSON;
 
 public class ISORequestListenerImplForJSON extends ISORequestListenerImpl {
 

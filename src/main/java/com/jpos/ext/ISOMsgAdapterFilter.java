@@ -1,4 +1,4 @@
-package com.edo.jpos.ext;
+package com.jpos.ext;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,7 +14,7 @@ import org.jpos.iso.ISOFilter;
 import org.jpos.iso.ISOMsg;
 import org.jpos.util.LogEvent;
 
-import com.edo.jpos.ext.SerializableConfiguration;
+import com.jpos.ext.SerializableConfiguration;
 
 public class ISOMsgAdapterFilter implements ISOFilter, XmlConfigurable {
 

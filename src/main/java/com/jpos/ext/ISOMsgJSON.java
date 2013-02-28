@@ -1,4 +1,4 @@
-package com.edo.jpos.ext;
+package com.jpos.ext;
 
 import java.io.IOException;
 import java.io.ObjectInput;
@@ -23,7 +23,7 @@ import org.jpos.iso.ISOMsg;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.edo.jpos.ext.ISOMsgAdapter;
+import com.jpos.ext.ISOMsgAdapter;
 
 
 public class ISOMsgJSON extends ISOMsgAdapter {
