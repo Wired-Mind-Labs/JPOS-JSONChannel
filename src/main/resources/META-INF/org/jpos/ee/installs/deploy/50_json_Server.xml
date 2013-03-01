@@ -6,12 +6,12 @@
 	<space>tspace:MessagingSpace</space>
 	<ignore-iso-exceptions>yes</ignore-iso-exceptions>
 	<attr name="port" type="java.lang.Integer">9184</attr>
-	<channel class="com.edo.jpos.ext.JSONChannel" logger="JSON"
+	<channel class="com.jpos.ext.JSONChannel" logger="JSON"
 		realm="JSON-channel">
 
 		<property name="timeout" value="3000000" />
 		<property name="override-header" value="true" />
-		<filter class="com.edo.jpos.ISOMsgJSONFilter" direction="incoming">
+		<filter class="com.jpos.ext.ISOMsgJSONFilter" direction="incoming">
 			<property name="fieldNumber" value="0" />
 			<property name="JSONName" value="transaction_type" />
 			<property name="fieldNumber" value="3" />
@@ -67,7 +67,7 @@
 			<property name="fieldNumber" value="5000" />
 			<property name="JSONName" value="origin" />
 		</filter>
-		<filter class="com.edo.jpos.ISOMsgAdapterFilter" direction="incoming">
+		<filter class="com.jpos.ext.ISOMsgAdapterFilter" direction="incoming">
 			<property name="adapter-class" value="com.edo.jpos.ext.ISOMsgJSON" />
 			<property name="merchantLocation" value="43" />
 			<property name="customerToken" value="120" />
@@ -75,7 +75,7 @@
 			<property name="merchantId" value="32" />
 		</filter>
 	</channel>
-	<request-listener class="com.edo.jpos.ISORequestListenerImplForJSON">
+	<request-listener class="com.jpos.ext.ISORequestListenerImplForJSON">
 		<property name="queueKey" value="ISOQueue" />
 		<property name="destinationSpace" value="tspace:ISOSpace" />
 		<property name="txnArrayKey" value="data" />
