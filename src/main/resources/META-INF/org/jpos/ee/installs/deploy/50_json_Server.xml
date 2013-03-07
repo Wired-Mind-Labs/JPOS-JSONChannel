@@ -68,7 +68,7 @@
 			<property name="JSONName" value="origin" />
 		</filter>
 		<filter class="com.jpos.ext.ISOMsgAdapterFilter" direction="incoming">
-			<property name="adapter-class" value="com.edo.jpos.ext.ISOMsgJSON" />
+			<property name="adapter-class" value="com.jpos.ext.ISOMsgJSON" />
 			<property name="merchantLocation" value="43" />
 			<property name="customerToken" value="120" />
 			<property name="merchantName" value="123" />
